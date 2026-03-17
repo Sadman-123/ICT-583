@@ -43,10 +43,17 @@ gapminder %>%
 gapminder %>%
   group_by(continent)%>%
   top_n(-1, gdpPercap)
-# Find the countries with the highest life expectancy, in months, in the year 2007
+# Part 11
 gapminder %>%
   filter(year == 2007) %>%
   mutate(lifeExp_months = lifeExp * 12) %>%
   filter(lifeExp == max(lifeExp)) %>%
   select(country, lifeExp, lifeExp_months)
-
+#Part 12
+gapminder %>%
+  filter(year == 1957) %>%
+  group_by(continent) %>%
+  summarise(
+    median_lifeExp = median(lifeExp),
+    max_gdpPercap = max(gdpPercap)
+  )
