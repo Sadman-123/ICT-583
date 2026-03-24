@@ -57,3 +57,4 @@ gapminder %>%
     median_lifeExp = median(lifeExp),
     max_gdpPercap = max(gdpPercap)
   )
+
